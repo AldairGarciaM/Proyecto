@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <title> {% block titulo %} {% endblock %} </title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contenido/css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'contenido/css/font-awesome.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'contenido/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'contenido/css/imagehover.min.css' %}"/>
+
+    <script src="https://kit.fontawesome.com/bffc2f26a2.js" crossorigin="anonymous"></script>
+    <script src="{% static 'contenido/js/jquery.min.js' %}"></script>
+    <script src="{% static 'contenido/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'contenido/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'contenido/js/custom.js' %}"></script>
+    
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Edu<span>-Moocks</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="#organizacion">Organizacion</a></li>
+            <li><a href="{% url 'Cursos' %}">Cursos</a></li>
+            <li><a href="#contacto">Contactanos</a></li>
+            <li><a href="{% url 'Login' %}">Iniciar Sesion</a></li>
+            <li class="btn-trial"><a href="{% url 'Registro' %}">Registrar</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <!--/ Navigation bar-->
+
+    {% block contenido %}
+
+    {% endblock %}
+
+    {% block pie %}
+    <!--Footer-->
+    <footer id="footer" class="footer">
+        <div class="container text-center">
+        <!-- End newsletter-form -->
+        <ul class="social-links">
+            <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
+            <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
+            <li><a href="#link"><i class="fa fa-google-plus fa-fw"></i></a></li>
+            <li><a href="#link"><i class="fa fa-dribbble fa-fw"></i></a></li>
+            <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+        </ul>
+        ©2022 Edu-Moocks. Todos los derechos reservados
+        <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Mentor
+            -->
+            Diseñado por <a href="https://bootstrapmade.com/">TeamEdu-Moocks.com</a>
+        </div>
+        </div>
+    </footer>
+    <!--/ Footer-->
+    {% endblock %}
+
+</body>
+</html>

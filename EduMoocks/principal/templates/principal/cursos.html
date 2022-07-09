@@ -1,0 +1,38 @@
+{% extends "contenido/plantilla.html"%}
+
+{% block contenido %}
+
+
+<section id="contacto" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Cursos</h2>
+          <p>Aun no es la plantilla final <br> Esto es un ejemplo de como se vera, solo estamos comprovando que la base de datos fue llamada correctamente</p>
+          <hr class="bottom-line">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-padding">
+    <div class="row">
+      <div class="">
+        {% for curso in cursos %}
+        <div class="text-center col-md-4 ms-auto">
+          <div class="card service-box dark">
+            <div class="card-body">
+              <img class="card-img-top" src="{{curso.imagen.url}}" class="img-media" width="200px" alt="200px"><br><hr>
+              <h5 class="card-title">Nombre del Cursos: {{curso.nombre}}</h5>
+              <p class="card-text">Categoria: {{curso.categoria}}</p>
+              <p class="card-text">Precio: ${{curso.precio}} pesos</p>
+              <a href="#" class="btn btn-primary">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+    </div><br>
+  </div>
+
+{% endblock %}

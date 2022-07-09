@@ -1,0 +1,53 @@
+{% extends "contenido/plantilla.html"%}
+
+{% block contenido%}
+<section id="contacto" class="section-padding">
+    <div class="container">
+    </div>
+
+    <form class="form-horizontal" action="#" role="form">
+	    <div class="panel panel-default">
+	        <div class="panel-body">
+
+                <div class="header-section text-center">
+                    <br><h2>¡Inicia Sesion en tu cuenta de Edu-Moocks!</h2>
+                    <p>Entra a tu cuenta para poder ver las distintas opciones de cursos que ofrecemos <br>¡Explora, decide y compra el curso que mas necesites!.</p>
+                    <hr class="bottom-line">
+                  </div>
+
+				<div class="form-group">
+				    <label class="col-sm-5 control-label text-center">Correo Electronico:</label>
+				    <div class="col-sm-4">
+				        <input type="text" class="form-control">
+				    </div>
+				</div>
+				        
+				<div class="form-group">
+				    <label class="col-sm-5 control-label text-center">Contraseña:</label>
+				        <div class="col-sm-4">
+				            <input type="text" class="form-control">
+				    	</div>
+				</div>
+				        
+
+				<div class="container">
+					<div class="row">
+					  <div class="col text-center">
+						<button class="btn btn-primary" value="Iniciar Sesion">Iniciar Sesion</button>
+					  </div>
+					</div>
+				</div><hr>
+
+				<div class="form-group">
+					<label class="col-sm-7 control-label text-center">¿No tienes una cuenta?</label>
+					<div class="col-sm-3">
+						<label><a href="{% url 'Registro' %}">¡Crea una ahora!</a></label>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</form>
+
+  </section>
+{% endblock%}
