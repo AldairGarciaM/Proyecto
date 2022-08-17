@@ -1,10 +1,10 @@
 {% extends "contenido/plantilla.html"%}
 
 {%block contenido %}
-<section id="contacto" class="section-padding">
+<br><section id="contacto" class="section-padding">
     <div class="container">
     </div>
-    <br><form class="form-horizontal" action="#" role="form">
+    <br><form class="form-horizontal" action="#" role="form" method="POST">
 	    <div class="panel panel-default">
 	        <div class="panel-body">
 
@@ -13,25 +13,33 @@
                     <p>¡¡Una gran cantidad de cursos te esperan!!. <br>Expande o refuerza tus conocimientos para obtener mayor experiencia.</p>
                     <hr class="bottom-line">
                 </div>
+				{% csrf_token %}
 
 				<div class="form-group">
 				    <label class="col-sm-5 control-label text-center">Nombre de usuario:</label>
 				    <div class="col-sm-4">
-				        <input type="text" class="form-control">
+				        <input type="text" class="form-control" id="username" name="username">
 				    </div>
 				</div>
 
 				<div class="form-group">
 				    <label class="col-sm-5 control-label text-center">Correo Electronico:</label>
 				    <div class="col-sm-4">
-				        <input type="text" class="form-control">
+				        <input type="text" class="form-control" id="email" name="email">
 				    </div>
 				</div>
 				        
 				<div class="form-group">
 				    <label class="col-sm-5 control-label text-center">Contraseña:</label>
 				        <div class="col-sm-4">
-				            <input type="text" class="form-control">
+				            <input type="password" class="form-control" id="password1" name="password1" >
+				    	</div>
+				</div>
+
+				<div class="form-group">
+				    <label class="col-sm-5 control-label text-center">Confirmar contraseña:</label>
+				        <div class="col-sm-4">
+				            <input type="password" class="form-control" id="password2" name="password2" >
 				    	</div>
 				</div>
 				        
@@ -39,7 +47,7 @@
 				<div class="container">
 					<div class="row">
 					  <div class="col text-center">
-						<button class="btn btn-primary" value="Terminar Registro">Terminar Registro</button>
+						<button type="submit" id="submit" class="btn btn-primary"> Terminar Registro</button>
 					  </div>
 					</div>
 				</div><hr>
@@ -50,7 +58,7 @@
 						<label><a href="{% url 'Login' %}">¡Inicia Sesion!</a></label>
 					</div>
 				</div>
-
+				
 			</div>
 		</div>
 	</form>

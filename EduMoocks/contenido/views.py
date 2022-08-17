@@ -8,5 +8,5 @@ def inicio(request):
 def contacto(request):
     return render(request, "contenido/contacto.html")
 
-def cursos(request):
-    return render(request, "contenido/cursos.html")
+def listaCurso(request):
+    return render(request, "contenido/listaCursos.html")

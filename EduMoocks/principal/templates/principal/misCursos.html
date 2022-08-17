@@ -1,0 +1,30 @@
+{% extends "contenido/plantilla.html"%}
+
+{% block contenido%}
+
+<br><section id="cursos" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Tus Cursos</h2>
+          <h4>Aqui se muestra el listado de los cursos que has adquirido</h4>
+          <hr class="bottom-line">
+        </div>
+        
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box text-center">
+            <div class="icon-box">
+              <img class="card-img-top" src="{{curso.imagen.url}}" class="img-media" width="300px" alt="200px"><br><hr>
+            </div>
+            <div class="icon-text">
+              <h5 class="card-title">Nombre del Cursos: {{curso.nombre}}</h5>
+              <p class="card-text">Categoria: {{curso.categoria}}</p>
+              <p class="card-text">Precio: ${{curso.precio}} pesos</p>
+              <a href="" class="btn btn-primary">Ver detalles</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+  </section>
+{% endblock%}
