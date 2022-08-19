@@ -25,7 +25,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.inicio, name="Principal"),
-    path('contacto/', views.contacto, name="Contacto"),
+    path('contacto/', views_principal.Comentario, name="Comentario"),
     path('ListaCursos/', views.listaCurso, name="Lista"),
     path('cursos/', views_principal.cursos, name="Cursos"),
     path('registro/', views_principal.registro, name="Registro"),
@@ -34,9 +34,14 @@ urlpatterns = [
     path('categorias/', views_principal.categorias, name="Categorias"),
     path('home/', views_principal.home, name="Principal"),
     path('InfoCursos/<int:id>/', views_principal.infoCursos, name="Informacion"),
-    path('MisCursos/', views_principal.misCursos, name="MisCursos"),
+    path('comprar/<int:id>/', views_principal.Comprar, name="Comprar"),
+    path('MisCursos/<int:id>/', views_principal.misCursos, name="MisCursos"),
     path('programacion/', views_principal.cursoProgra, name="Programacion"),
     path('animacion/', views_principal.cursoAnima, name="Animacion"),
+    path('seguridad/', views_principal.cursoSeguridad, name="Seguridad"),
+    path('robotica/', views_principal.cursoRobo, name="Robotica"),
+    path('bases/', views_principal.cursoBases, name="Bases"),
+    path('servidores/', views_principal.cursoServi, name="Servidores"),
 
 ]
 

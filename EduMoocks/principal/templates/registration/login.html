@@ -1,5 +1,9 @@
 {% extends "contenido/plantilla.html"%}
 
+{% block titulo %}
+Login
+{% endblock %}
+
 {% block contenido%}
 <br><section id="contacto" class="section-padding">
     <div class="container">
@@ -11,15 +15,16 @@
 	        <div class="panel-body">
 
                 <div class="header-section text-center">
-                    <br><h2>¡Inicia Sesion en tu cuenta de Edu-Moocks!</h2>
+                    <h2>¡Inicia Sesion en tu cuenta de Edu-Moocks!</h2>
                     <p>Entra a tu cuenta para poder ver las distintas opciones de cursos que ofrecemos <br>¡Explora, decide y compra el curso que mas necesites!.</p>
+					<img class="card-img-top" src="/static/contenido/img/logo.jpeg" class="img-media" width="250px" alt="250px">
                     <hr class="bottom-line">
                   </div>
 
 				<div class="form-group">
 				    <label class="col-sm-5 control-label text-center">Nombre de usuario:</label>
 				    <div class="col-sm-4">
-				        <input type="text" class="form-control" id="idusername" name="username">
+				        <input type="text" class="form-control" id="idusername" name="username" autocomplete="off">
 				    </div>
 				</div>
 				        
@@ -34,7 +39,7 @@
 				<div class="container">
 					<div class="row">
 					  <div class="col text-center">
-            <button type="submit" id="submit" class="btn btn-primary"> Continuar </button>
+            			<button type="submit" id="submit" class="btn btn-success"> Continuar </button>
 					  </div>
 					</div>
 				</div><hr>
@@ -45,7 +50,6 @@
 						<label><a href="{% url 'Registro' %}">¡Crea una ahora!</a></label>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</form>

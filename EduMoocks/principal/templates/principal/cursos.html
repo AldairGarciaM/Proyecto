@@ -1,5 +1,9 @@
 {% extends "contenido/plantilla.html"%}
 
+{% block titulo %}
+Cursos
+{% endblock %}
+
 {% block contenido %}
 <br><section id="cursos" class="section-padding">
       <div class="container">
@@ -11,17 +15,21 @@
           </div>
           {% for curso in cursos %}
           <div class="col-md-4 col-sm-6">
-            <div class="service-box text-center">
-              <div class="icon-box">
+            <div class="card bg-success padding"><br>
+              <div class="card-header text-center">
+                <h4 class="card-title">Curso: {{curso.nombre}}</h4>
+              </div>
+              <div class="icon-box text-center">
                 <img class="card-img-top" src="{{curso.imagen.url}}" class="img-media" width="300px" alt="200px"><br><hr>
               </div>
               <div class="icon-text">
-                <h5 class="card-title">Nombre del Cursos: {{curso.nombre}}</h5>
                 <p class="card-text">Categoria: {{curso.categoria}}</p>
                 <p class="card-text">Precio: ${{curso.precio}} pesos</p>
-                <a href="{%url 'Informacion' curso.id%}" class="btn btn-primary">Ver detalles</a>
+                <div class="text-center">
+                  <a href="{%url 'Informacion' curso.id%}" class="btn btn-success">Ver detalles</a>
+                </div><br>
               </div>
-            </div>
+            </div><br>
           </div>
           {% endfor %}
         </div>

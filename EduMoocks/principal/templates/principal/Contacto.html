@@ -1,0 +1,77 @@
+{% extends "contenido/plantilla.html"%}
+
+{% block titulo %}
+Contacto
+{% endblock %}
+
+{% block contenido %}
+<br><section id="contacto" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="header-section text-center">
+          <h2>Comentarios</h2>
+          <p>Deja tu opinion sobre nuestro sitio <br> nos ayudara a mejorarlo.</p>
+          <hr class="bottom-line">
+        </div><hr>
+
+        <form class="form-horizontal" action="{% url 'Comentario' %}" role="form" method="POST">
+          {% csrf_token %}
+          <div class="panel panel-default">
+              <div class="panel-body">
+    
+            <div class="form-group">
+                <label class="col-sm-5 control-label text-center">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="idusername" name="nombre" autocomplete="off">
+                </div>
+            </div>
+                    
+            <div class="form-group">
+                <label class="col-sm-5 control-label text-center">Comentario:</label>
+                    <div class="col-sm-4">
+                      <textarea class="form-control" name="mensaje" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Comentario"></textarea>
+                  </div>
+            </div>
+                    
+            <div class="container">
+              <div class="row">
+                <div class="col text-center">
+                  <input type="submit" class="btn btn-success" value="Enviar Comentario"></input>
+                </div>
+              </div>
+            </div><hr>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section-padding">
+    <div class="row">
+        <div class="header-section text-center">
+          <h2>Seccion de comentarios</h2>
+          <p>Comentarios agregados</p>
+          <hr class="bottom-line">
+        </div>
+
+        <div class="container">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <article>
+                        {% for comenta in comentario %}
+                        <div class="col-md-6 offset-md-3">
+                            <img src="/static/principal/img/usuario.png" alt="50px" width="50px">
+                            <h3 class="text-success font-weight-bold">{{comenta.nombre}}</h3>
+                            <h4>{{comenta.mensaje}}</h4><hr>
+                        </div>
+                        {%endfor %}
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </section>
+  {% endblock %}
+
+
+  

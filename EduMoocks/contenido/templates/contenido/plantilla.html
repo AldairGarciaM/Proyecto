@@ -27,32 +27,25 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Edu<span>-Moocks</span></a>
+            <a class="navbar-brand" >Edu<span>-Moocks</span></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
 
             {% if request.user.is_authenticated %}
-            
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa-solid fa-user"> Usuario: {{user.username}}</i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'Principal' %}">Pagina principal</a><br>
-                  <a class="dropdown-item" href="{% url 'MisCursos' %}">Mis Cursos</a><br>
-                  <a class="dropdown-item" href="{% url 'Categorias' %}">Categorias</a><br><hr>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{% url 'Logout' %}" class="btn btn-danger">Salir</a>
-                </div>
-              </li>
+
+            <li><a href="{% url 'Principal'%}"> Usuario: {{user.username}}</a></li>
+            <li><a href="{% url 'MisCursos'  user.id%}">Mi Cursos</a></li>
+            <li><a href="{% url 'Categorias' %}">Categorias</a></li>
+            <li class="btn-trial"><a href="{% url 'Logout' %}">Salir</a></li>
+        
 
             {% else %}
             
             <li><a href="/">Inicio</a></li>
             <li><a href="#organizacion">Organizacion</a></li>
             <li><a href="{% url 'Lista' %}">Cursos</a></li>
-            <li><a href="#contacto">Contactanos</a></li>
+            <li><a href="{% url 'Comentario' %}">Contactanos</a></li>
             <li><a href="{% url 'Login' %}">Iniciar Sesion</a></li>
             <li class="btn-trial"><a href="{% url 'Registro' %}">Registrar</a></li>
             

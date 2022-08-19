@@ -1,5 +1,6 @@
 from dataclasses import field, fields
 from django import forms
+from .models import compras, Comentarios
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -13,3 +14,13 @@ class userRegisterForm(UserCreationForm):
         model= User
         fields= ['username', 'email', 'password1', 'password2']
         help_text= {k:"" for k in fields}
+
+class ComentarioContactoForm(forms.ModelForm):
+    class Meta:
+        model= Comentarios
+        fields=['nombre', 'mensaje']
+
+class compraCurso(forms.ModelForm):
+    class Meta:
+        model= compras
+        fields= ['user', 'curso', 'precio']

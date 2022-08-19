@@ -1,29 +1,34 @@
 {% extends "contenido/plantilla.html"%}
 
+{% block titulo %}
+Mis Cursos
+{% endblock %}
+
 {% block contenido%}
 
 <br><section id="cursos" class="section-padding">
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Tus Cursos</h2>
+          <h1>Cursos de {{user.username}}</h1>
           <h4>Aqui se muestra el listado de los cursos que has adquirido</h4>
           <hr class="bottom-line">
         </div>
-        
+
+        {% for comprado in comprado %}
         <div class="col-md-4 col-sm-6">
-          <div class="service-box text-center">
-            <div class="icon-box">
-              <img class="card-img-top" src="{{curso.imagen.url}}" class="img-media" width="300px" alt="200px"><br><hr>
+          <div class="service-box">
+            <div class="icon-box text-center">
+              <img class="card-img-top" src="/static/contenido/img/compra.jpg" class="img-media" width="100px" alt="100px"><br><hr>
             </div>
             <div class="icon-text">
-              <h5 class="card-title">Nombre del Cursos: {{curso.nombre}}</h5>
-              <p class="card-text">Categoria: {{curso.categoria}}</p>
-              <p class="card-text">Precio: ${{curso.precio}} pesos</p>
-              <a href="" class="btn btn-primary">Ver detalles</a>
+              <h5 class="card-title">Nombre del Cursos: {{comprado.curso}}</h5>
+              <p class="card-text">Precio:$ {{comprado.precio}}.00 pesos</p>
+              <p class="card-text">Fecha de compra: {{comprado.created}}</p>
             </div>
-          </div>
+          </div><br>
         </div>
+        {% endfor %}
         
       </div>
   </section>

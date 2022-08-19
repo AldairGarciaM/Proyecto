@@ -1,5 +1,9 @@
 {% extends "contenido/plantilla.html"%}
 
+{% block titulo %}
+Home
+{% endblock %}
+
 {% block contenido%}
 
 <br><section id="contacto" class="section-padding">
@@ -8,29 +12,30 @@
 	        <div class="panel-body">
                 <div class="header-section text-center">
 
-                    <br><h2>Bienvenid@ {{user.username}}</h2>
-
+                    <br><h2 class="text-success">Bienvenid@ {{user.username}}</h2>
                     <h3>Que te gustaria Hacer</h3>
                     <hr class="bottom-line">
 
                     <div class="row">
                         <div class="col-sm-6">
-                          <div class="card">
+                          <div class="card service-box">
                             <div class="card-body">
                               <img src="/static/principal/img/compra.jpg" >
                               <h1 class="card-title">Mis cursos</h1>
                               <h4 class="card-text">Aqui se encuentran los cursos que has adquirido</h4>
-                              <a href="{% url 'MisCursos' %}" class="btn btn-primary">Ir a mis cursos</a>
+                             
+                              <a href="{% url 'MisCursos' user.id%}" class="btn btn-success">Ir a mis cursos</a>
+                              
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-6">
-                          <div class="card">
+                          <div class="card service-box">
                             <div class="card-body">
                               <img src="/static/principal/img/mio.jpg" >
                               <h1 class="card-title">Categorias</h1>
                               <h4 class="card-text">Ve las diferentes categorias de los cursos que puedes adquirir</h4>
-                              <a href="{% url 'Categorias' %}" class="btn btn-primary">Adquirir nuevo curso</a>
+                              <a href="{% url 'Categorias' %}" class="btn btn-success">Adquirir nuevo curso</a>
                             </div>
                           </div>
                         </div>

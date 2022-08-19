@@ -1,29 +1,138 @@
 {% extends "contenido/plantilla.html"%}
 
+{% block titulo %}
+Cursos
+{% endblock %}
+
 {% block contenido %}
 <br><section id="cursos" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="header-section text-center">
-            <h2>Listado de Cursos</h2>
-            <h4>Adquiere el cursos que mas te agrade</h4>
-            <hr class="bottom-line">
-          </div>
+  <div class="container">
+    <div class="row">
+      <div class="header-section text-center">
+          <h2>Categorias</h2>
+          <h4>Estas son las categorias que tenemos por el momentos</h4>
+          <hr class="bottom-line">
+        </div><hr>
         
-          <div class="col-md-4 col-sm-6">
-            <div class="service-box text-center">
-              <div class="icon-box">
-                <img class="card-img-top" src="{{curso.imagen.url}}" class="img-media" width="300px" alt="200px"><br><hr>
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box">
+              <div class="card-header text-center">
+                  <h3 class="card-title">Cursos Relacionados a:</h3>
               </div>
-              <div class="icon-text">
-                <h5 class="card-title">Nombre del Cursos: {{curso.nombre}}</h5>
-                <p class="card-text">Categoria: {{curso.categoria}}</p>
-                <p class="card-text">Precio: ${{curso.precio}} pesos</p>
-                <a href="{% url 'Login' %}" class="btn btn-primary">Ver detalles</a>
+            <div class="icon-box text-center">
+              <img class="card-img-top" src="/static/contenido/img/py.png" class="img-media" width="100px" alt="100px">
+            </div><hr>
+            <div class="icon-text">
+              <div class="text-center">
+                  <h3 class="card-title">Programacion</h3>
+              </div>
+              <p class="card-text">Categoria especializada en la programacion.<br>Aprende a crear un CRUD sencillo hasta la realizacion de un sitio web completo.<br> Entre muchas mas otras cosas.</p>
+              <div class="text-center">
+                  <a href="{% url 'Login' %}" class="btn btn-success">Explorar</a>
               </div>
             </div>
-          </div>
-         
+          </div><br>
         </div>
-    </section>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box">
+              <div class="card-header text-center">
+                  <h3 class="card-title">Cursos Relacionados a:</h3>
+              </div>
+            <div class="text-center">
+              <img class="card-img-top" src="/static/contenido/img/animation.png" class="img-media" width="100px" alt="100px">
+            </div><hr>
+            <div class="icon-text">
+              <div class="text-center">
+                  <h3 class="card-title">Animacion Digital</h3>
+              </div>
+              <p class="card-text">Te gustaria realizar animaciones como cinematicas de videojuesgo, anuncios publicitarios, Modelado 3D.<br> Si es asi este apartado es lo que buscas, aprende a realizar animaciones desde cero.</p>
+              <div class="text-center">
+                  <a href="{% url 'Login' %}" class="btn btn-success">Explorar</a>
+              </div>
+            </div>
+          </div><br>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box">
+              <div class="card-header text-center">
+                  <h3 class="card-title">Cursos Relacionados a:</h3>
+              </div>
+            <div class="text-center">
+              <img class="card-img-top" src="/static/contenido/img/seguridad.png" class="img-media" width="100px" alt="100px">
+            </div><hr>
+            <div class="icon-text">
+              <div class="text-center">
+                  <h3 class="card-title">Seguridad Web</h3>
+              </div>
+              <p class="card-text">¿Te interesa saber como se compone una red ethernet, realizar mapeos, montar IPs?.<br>Puedes explorar este apartado para encontrar lo que deseas y poder crear una red segura para uso personal.</p>
+              <div class="text-center">
+                  <a href="{% url 'Login' %}" class="btn btn-success">Explorar</a>
+              </div>
+            </div>
+          </div><br>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box">
+              <div class="card-header text-center">
+                  <h3 class="card-title">Cursos Relacionados a:</h3>
+              </div>
+            <div class="text-center">
+              <img class="card-img-top" src="/static/contenido/img/robot.png" class="img-media" width="100px" alt="100px">
+            </div><hr>
+            <div class="icon-text">
+              <div class="text-center">
+                  <h3 class="card-title">Robotica</h3>
+              </div>
+              <p class="card-text">Una de las materias mas demandadas sin duda es la robotica. <br> Aprende a construir estructuras mecanicas que fucinonen con algoritmos creados por ti mismo.<br>Crea el futuro de la humanidad.</p>
+              <div class="text-center">
+                  <a href="{% url 'Login' %}" class="btn btn-success">Explorar</a>
+              </div>
+            </div>
+          </div><br>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box">
+              <div class="card-header text-center">
+                  <h3 class="card-title">Cursos Relacionados a:</h3>
+              </div>
+            <div class="text-center">
+              <img class="card-img-top" src="/static/contenido/img/base.png" class="img-media" width="100px" alt="100px">
+            </div><hr>
+            <div class="icon-text">
+              <div class="text-center">
+                  <h3 class="card-title">Bases de datos</h3>
+              </div>
+              <p class="card-text">Sin duda las bases de datos es un apartado indispensable dentro de la programacion. <br>Aprende a construir bases de datos y a manejarlas para poder incluirlas dentro de tus proyectos.</p>
+              <div class="text-center">
+                  <a href="{% url 'Login' %}" class="btn btn-success">Explorar</a>
+              </div>
+            </div>
+          </div><br>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+          <div class="service-box">
+              <div class="card-header text-center">
+                  <h3 class="card-title">Cursos Relacionados a:</h3>
+              </div>
+            <div class="text-center">
+              <img class="card-img-top" src="/static/contenido/img/html.png" class="img-media" width="100px" alt="100px">
+            </div><hr>
+            <div class="icon-text">
+              <div class="text-center">
+                  <h3 class="card-title">Desarrollo de Servidores</h3>
+              </div>
+              <p class="card-text">Los servidores sin duda son un apartado necesario para poder visualizar tus proyectos dentro de la web. <br> Aprende a montar servidores que puedan soportar gran cantidad de llamadas.</p>
+              <div class="text-center">
+                  <a href="{% url 'Login' %}" class="btn btn-success">Explorar</a>
+              </div>
+            </div>
+          </div><br>
+        </div>
+  </div>
+</section>
 {% endblock %}

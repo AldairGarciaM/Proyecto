@@ -1,5 +1,9 @@
 {% extends "contenido/plantilla.html"%}
 
+{% block titulo %}
+Edu-Moocks
+{% endblock %}
+
 {% block contenido %}
   
   <!--Banner-->
@@ -79,7 +83,7 @@
     <div class="container">
       <div class="row">
         <div class="header-section text-center">
-          <h2>Cursos</h2>
+          <h2>Lenguajes que aprenderas</h2>
           <p>Contamos con una variedad de distintas ramas <br> de la tecnologia que te pueden ayudar a expandir tu conocimiento.</p>
           <hr class="bottom-line">
         </div>
@@ -177,48 +181,6 @@
     </div>
   </section>
   <!--/ work-shop-->
- 
-  
- <!--Contact-->
- <section id="contacto" class="section-padding">
-  <div class="container">
-    <div class="row">
-      <div class="header-section text-center">
-        <h2>Contacto</h2>
-        <p>Deja tu opinion sobre nuestro sitio <br> nos ayudara a mejorarlo.</p>
-        <hr class="bottom-line">
-      </div>
-      <div id="sendmessage">Su mensaje se guardo correctamente!!</div>
-      <div id="errormessage"></div>
-      <form action="" method="post" role="form" class="contactForm">
-        <div class="col-md-6 col-sm-6 col-xs-12 left">
-          <div class="form-group">
-            <input type="text" name="name" class="form-control form" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-            <div class="validation"></div>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
-            <div class="validation"></div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-12 right">
-          <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Comentario"></textarea>
-            <div class="validation"></div>
-          </div>
-        </div>
-
-        <div class="col-xs-12">
-          <!-- Button -->
-          <input type="submit" class="btn btn-success" value="Enviar Comentario"></input>
-        </div>
-      </form>
-
-    </div>
-  </div>
-</section>
-<!--/ Contact-->
 
 {%endblock%}
 

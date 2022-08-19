@@ -1,6 +1,8 @@
 from distutils.command.upload import upload
 from tabnanny import verbose
+from tkinter import CASCADE
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -42,13 +44,14 @@ class Usuarios(models.Model):
 
 class Comentarios(models.Model):
     id= models.AutoField(primary_key=True, verbose_name="Numero")
-    nombre= models.ForeignKey(Usuarios, on_delete=models.CASCADE, verbose_name="Usuario")
+    nombre= models.CharField(max_length=255, verbose_name="Usuario")
     mensaje= models.TextField(verbose_name="Comentario")
     created= models.DateTimeField(auto_now_add=True, verbose_name="Creacion")
 
     class Meta:
         verbose_name= "Comentario"
         verbose_name_plural= "Comentarios"
+        ordering=["-created"]
 
     def __str__(self):
         return self.nombre
@@ -67,15 +70,25 @@ class ComentarioPublico(models.Model):
     def __str__(self):
         return self.usuario
 
-class Ventas(models.Model):
+class perfil(models.Model):
     id= models.AutoField(primary_key=True, verbose_name="ID")
-    nombre= models.ForeignKey(Usuarios, on_delete=models.CASCADE, verbose_name="Usuario")
-    curso= models.ForeignKey(Cursos, on_delete=models.CASCADE, verbose_name="Curso")
-    creacion= models.DateTimeField(auto_now_add=True, verbose_name="Creacion")
-
-    class Meta:
-        verbose_name= "Venta"
-        verbose_name_plural= "Ventas"
+    user= models.OneToOneField(User, on_delete=models.CASCADE)
+    
 
     def __str__(self):
-        return self.curso
+        return f'Cuenta de {self.user.username}'
+
+
+class compras(models.Model):
+    user= models.ForeignKey(User, on_delete=models.CASCADE, related_name="compras")
+    curso= models.CharField(max_length=50, verbose_name="Curso")
+    precio= models.CharField(max_length=50, verbose_name="Costo")
+    created= models.DateTimeField(auto_now_add=True, verbose_name="Fecha")
+
+    class Meta:
+        verbose_name="Compra"
+        verbose_name_plural= "Compras"
+        ordering=["-created"]
+
+    def __str__(self):
+        return f'{self.user.username}: {self.curso}: {self.precio}'
